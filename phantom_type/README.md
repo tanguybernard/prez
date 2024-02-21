@@ -34,3 +34,4 @@ https://davesquared.net/2019/01/phantom-types.html
 
 https://xebia.com/blog/compile-safe-builder-pattern-using-phantom-types-in-scala/
 
+https://medium.com/@sellmair/phantom-read-rights-in-kotlin-modelling-a-pipeline-eef3523db857

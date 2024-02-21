@@ -108,7 +108,7 @@ Note: https://twitter.com/v_pradeilles/status/1715328789486383236?s=61&t=V7PID5J
 
 ```kotlin
 @JvmInline value class Id<out T>(val value: String)
-
+// Id<out T> in Kotlin is Id<? extends T> in Java
 data class User(val id: Id<User>)
 data class Location(val id: Id<Location>)
 
@@ -124,7 +124,29 @@ fun main() {
 
 Note: https://twitter.com/v_pradeilles/status/1715328789486383236?s=61&t=V7PID5JI7WpC7UFFTCWcSA
 
+---
 
+## Avec des mesures
+
+```kotlin
+sealed class MeasUnit
+object MileUnit: MeasUnit()
+object MeterUnit: MeasUnit()
+
+class MeasureValue<out T: MeasUnit>(val i: Int){
+}
+
+data class Mile(val m: MeasureValue<MileUnit>)
+data class Meter(val m: MeasureValue<MeterUnit>)
+
+fun main() {
+    val first = Mile(m= MeasureValue(1))
+    val sec = Meter(m= MeasureValue(2))
+    if(first.m == sec.m){//Compilation failed
+        println("do something")
+    }
+}
+```
 -----
 
 ## Type safety
@@ -142,6 +164,46 @@ Il y a deux problèmes principaux liés à la sécurité des types:
 
 
 Note: https://stackoverflow.com/questions/260626/what-is-type-safe
+
+-----
+
+
+## Mon implémentation
+
+```typescript
+declare const phantom: unique symbol;
+
+//Création de type avec un attribut caché
+type Utc = {[phantom]: "UTC"};
+type TzEuropeParis = {[phantom]: "Eutope/Paris"};
+
+//Phantom Type
+type DateTime<PHANTOM> = {value: string} & PHANTOM;
+
+function createPeriod<T>(d1: DateTime<T>, d2: DateTime<T>)
+{
+//new Period(d1, d2)
+}
+
+//provide a way to create person that ignores the additional 'phantom' property:
+const createUtcDate : (value: string) => DateTime<Utc> =
+(value) => {
+return {value} as DateTime<Utc>
+}
+
+const createEuropeParisDate : (value: string) => DateTime<TzEuropeParis> =
+(value) => {
+return {value} as DateTime<TzEuropeParis>
+}
+
+const utcDate1= createUtcDate("2024-02-01 00:00:00 +00");
+const utcDate2= createUtcDate("2024-02-19 00:00:00 +00");
+const europeParisDate1= createEuropeParisDate("2024-02-18T00:00:00 +01:00");
+
+
+createPeriod(utcDate1, utcDate2)
+createPeriod(utcDate1, europeParisDate1)//Error
+```
 
 -----
 
@@ -171,9 +233,7 @@ coPostSomething(john, alice);
 
 ```typescript
 class Person {
-
     constructor(public fstName: string, public lstName: string) {
-
     }
 }
 
@@ -226,12 +286,7 @@ function coCreateSomething(p1: Person<Creator>, p2: Person<Creator>)
 {
     console.log("Create something");
 }
-```
 
-
----
-
-```typescript
 //provide a way to create person that ignores the additional 'phantom' property:
 const createCreatorPerson : (fst: string, lst: string) => Person<Creator> = 
     (fst, lst) => {
@@ -310,7 +365,7 @@ const closeADoorAlreadyClose = closeReally(closedDoor); //ERROR: ferme une porte
 
 ## Bénéfices
 
-- Evite les recherches de types au moment de l'exécution.
+- Evite les recherches de types au moment de l'exécution (on le voit direct a la compil)
 - Rend les états explicites
 - Porte une partie des informations au niveau du type plutot que dans des sous-classes
 
