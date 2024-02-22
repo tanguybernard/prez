@@ -180,6 +180,9 @@ type TzEuropeParis = {[phantom]: "Eutope/Paris"};
 //Phantom Type
 type DateTime<PHANTOM> = {value: string} & PHANTOM;
 
+const t: DateTime<Utc> = {value: "2024-02-01 00:00:00 +00"} as  DateTime<Utc>;
+console.log(t[phantom])//log: {value: "2024-02-01 00:00:00 +00"}
+
 function createPeriod<T>(d1: DateTime<T>, d2: DateTime<T>)
 {
 //new Period(d1, d2)
