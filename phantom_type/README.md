@@ -1,4 +1,13 @@
+# Phantom Type
 
+
+## Play presentation
+
+  npm i
+
+  npm run start
+
+## Source:
 
 https://pwsmith.github.io/2020/05/26/revealjs-for-linguistics-creating-slides-in-markdown/
 
