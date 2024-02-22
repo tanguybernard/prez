@@ -3,9 +3,9 @@
 
 ## Play presentation
 
-  npm i
+    npm i
 
-  npm run start
+    npm run start
 
 ## Source:
 
