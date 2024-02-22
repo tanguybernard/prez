@@ -175,7 +175,7 @@ declare const phantom: unique symbol;
 
 //Création de type avec un attribut caché
 type Utc = {[phantom]: "UTC"};
-type TzEuropeParis = {[phantom]: "Eutope/Paris"};
+type TzEuropeParis = {[phantom]: "Europe/Paris"};
 
 //Phantom Type
 type DateTime<PHANTOM> = {value: string} & PHANTOM;
