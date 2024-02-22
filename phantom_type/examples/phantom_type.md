@@ -140,7 +140,7 @@ data class Mile(val m: MeasureValue<MileUnit>)
 data class Meter(val m: MeasureValue<MeterUnit>)
 
 fun main() {
-    val first = Mile(m= MeasureValue(1))
+    val first = Mile(m= MeasureValue(2))
     val sec = Meter(m= MeasureValue(2))
     if(first.m == sec.m){//Compilation failed
         println("do something")
