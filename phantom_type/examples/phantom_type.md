@@ -188,12 +188,12 @@ function createPeriod<T>(d1: DateTime<T>, d2: DateTime<T>)
 //provide a way to create person that ignores the additional 'phantom' property:
 const createUtcDate : (value: string) => DateTime<Utc> =
 (value) => {
-return {value} as DateTime<Utc>
+    return {value} as DateTime<Utc>
 }
 
 const createEuropeParisDate : (value: string) => DateTime<TzEuropeParis> =
 (value) => {
-return {value} as DateTime<TzEuropeParis>
+    return {value} as DateTime<TzEuropeParis>
 }
 
 const utcDate1= createUtcDate("2024-02-01 00:00:00 +00");
@@ -332,8 +332,9 @@ function closeDoor(door: Door) {
 ## Solution
 
 ```typescript
-type Open = {_type: 'Open'};
-type Close = {_type: 'Close'};
+declare const phantom: unique symbol;
+type Open = {[phantom]: 'Open'};
+type Close = {[phantom]: 'Close'};
 
 type DoorState<T> = {id: never} & T;
 
