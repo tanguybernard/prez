@@ -1,6 +1,6 @@
 
 
-## Example Measure
+## Avec des mesures (Kotlin)
 
 ```kotlin
 sealed class MeasUnit
@@ -22,7 +22,7 @@ fun main() {
 }
 ```
 
-## Example Viewer et Creator
+## Avec des roles (Typescript)
 
 ```typescript
 declare const phantom: unique symbol;
@@ -61,7 +61,7 @@ coCreateSomething(johnCreator, aliceViewer)//Error
 
 
 
-## Example Date
+## Avec des dates (Typescript)
 
 
 ```typescript
@@ -99,7 +99,7 @@ createPeriod(utcDate1, utcDate2)
 createPeriod(utcDate1, europeParisDate1)//Error
 ```
 
-Exemple Swift
+## Avec des roles (Swift)
 
 ```swift
 struct Employee<Role>: Equatable {
@@ -116,13 +116,16 @@ print(zoe1 == zoe2)
 ```
 
 
-https://www.hackingwithswift.com/plus/advanced-swift/how-to-use-phantom-types-in-swift
+source https://www.hackingwithswift.com/plus/advanced-swift/how-to-use-phantom-types-in-swift
 
 
-Example State Elm vs Typescript
+## Avec des états (Elm vs Typescript)
+
+Elm:
 
 https://sporto.github.io/elm-patterns/advanced/flow-phantom-types.html
     
+Typescript:
 
     declare const phantom: unique symbol;
     
@@ -130,52 +133,43 @@ https://sporto.github.io/elm-patterns/advanced/flow-phantom-types.html
     type Step<PHANTOM>
     = {model: {total: number, quantity:number}} & PHANTOM;
     
-    
     type Start = {[phantom]: "Start"};
-    
-    
+
     type OrderWithTotal =  {[phantom]: "OrderWithTotal"};
-    
-    
+
     type OrderWithQuantity=  {[phantom]: "OrderWithQuantity"};
     
-    
     type Done=  {[phantom]: "Done"};
-    
     
     const priceEach = 5;
     
     
     //setQuantity : Int -> Step Start -> Step OrderWithQuantity
     function setQuantity(v: number) {
-    const a: unknown = function() {
-    return {model: {quantity: v}} as unknown as Step<Start>
-    }
-    return a as () => Step<OrderWithQuantity>
+        const a: unknown = function() {
+            return {model: {quantity: v}} as unknown as Step<Start>
+        }
+        return a as () => Step<OrderWithQuantity>
     }
     //setTotal : Int -> Step Start -> Step OrderWithTotal
     function setTotal(v: number) {
-    const a: unknown = function() {
-    return {model: {total: v}} as Step<Start>
-    }
-    return a as () => Step<OrderWithTotal>
+        const a: unknown = function() {
+            return {model: {total: v}} as Step<Start>
+        }
+        return a as () => Step<OrderWithTotal>
     }
     
     //adjustTotalFromQuantity : Step OrderWithQuantity -> Step Done
     const adjustTotalFromQuantity = (step: Step<OrderWithQuantity>): Step<Done> => {
-    return {model: {...step.model, total: step.model.quantity*priceEach}} as Step<Done>
+        return {model: {...step.model, total: step.model.quantity*priceEach}} as Step<Done>
     }
     
     const adjustQuantityFromTotal = (step: Step<OrderWithTotal>): Step<Done> => {
-    return {model: {...step.model, quantity: step.model.quantity/priceEach}} as Step<Done>
+        return {model: {...step.model, quantity: step.model.quantity/priceEach}} as Step<Done>
     }
-    
-    
-    //done : Step Done -> Order
-    // TODO
     
     const init = setQuantity(5)();
     
     console.log(init.model);
 
-adjustQuantityFromTotal(init)
+    adjustQuantityFromTotal(init)

@@ -1,5 +1,7 @@
 # Phantom Type
 
+Tanguy Bernard
+
 -----
 
 ## Data Type
@@ -121,9 +123,9 @@ fun main() {
     }
 }
 ```
-
-source: https://emartynov.medium.com/kotlin-ddd-phantom-type-ae5ab1da0a35
-
+<div style="font-size: small;">
+Source: <span style="font-style: italic;">https://emartynov.medium.com/kotlin-ddd-phantom-type-ae5ab1da0a35
+</span></div>
 -----
 
 ## Type safety
@@ -348,8 +350,11 @@ const closeADoorAlreadyClose = closeReally(closedDoor); //ERROR: ferme une porte
 - Rend les états explicites
 - Porte une partie des informations au niveau du type plutot que dans des sous-classes
 
+---
 
 ## Source
+
+<div style="font-size:small">
 
 https://emartynov.medium.com/kotlin-ddd-phantom-type-ae5ab1da0a35
 
@@ -364,3 +369,5 @@ https://davesquared.net/2019/01/phantom-types.html
 https://xebia.com/blog/compile-safe-builder-pattern-using-phantom-types-in-scala/
 
 https://medium.com/@sellmair/phantom-read-rights-in-kotlin-modelling-a-pipeline-eef3523db857
+
+</div>

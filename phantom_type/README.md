@@ -1,7 +1,13 @@
 # Phantom Type
 
 
-## Play presentation
+## Exemples
+
+[Exemples](./EXAMPLE.md)
+
+
+
+## Run presentation
 
     npm i
 
