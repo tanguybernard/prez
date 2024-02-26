@@ -5,7 +5,9 @@
 
 [Exemples](./EXAMPLE.md)
 
+## La prez
 
+[Prez](./examples/phantom_type.md)
 
 ## Run presentation
 
@@ -15,16 +17,13 @@
 
 ## Source:
 
+Reveal:
 https://pwsmith.github.io/2020/05/26/revealjs-for-linguistics-creating-slides-in-markdown/
 
 
-Generic
+Generic:
 
 http://www.angelikalanger.com/GenericsFAQ/FAQSections/ParameterizedTypes.html#FAQ001
-
-
-
-https://rpeszek.github.io/posts/2022-01-09-ts-types-part4.html#fnref1
 
 
 Value Classes in Kotlin:
@@ -36,6 +35,7 @@ Type Safe:
 https://stackoverflow.com/questions/260626/what-is-type-safe/48176188#48176188
 
 Phantom Type:
+
 
 https://emartynov.medium.com/kotlin-ddd-phantom-type-ae5ab1da0a35
 
