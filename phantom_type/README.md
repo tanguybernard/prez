@@ -44,3 +44,7 @@ https://davesquared.net/2019/01/phantom-types.html
 https://xebia.com/blog/compile-safe-builder-pattern-using-phantom-types-in-scala/
 
 https://medium.com/@sellmair/phantom-read-rights-in-kotlin-modelling-a-pipeline-eef3523db857
+
+https://medium.com/@snowp/transparent-phantom-types-in-c-de6ac5bed1d1
+
+https://www.hackingwithswift.com/plus/advanced-swift/how-to-use-phantom-types-in-swift

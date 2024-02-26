@@ -67,7 +67,7 @@ Note: Un type fantôme est un type paramétré dans lequel un ou plusieurs param
 
 ---
 
-### Phantom Types
+## Phantom Types
 
 Ce sont des types qui apportent des infos au compilateur pour introduire des contraintes et lever des erreurs au plus tôt évitant ainsi les surprises au runtime.
 
@@ -122,31 +122,8 @@ fun main() {
 }
 ```
 
-Note: https://twitter.com/v_pradeilles/status/1715328789486383236?s=61&t=V7PID5JI7WpC7UFFTCWcSA
+source: https://emartynov.medium.com/kotlin-ddd-phantom-type-ae5ab1da0a35
 
----
-
-## Avec des mesures
-
-```kotlin
-sealed class MeasUnit
-object MileUnit: MeasUnit()
-object MeterUnit: MeasUnit()
-
-class MeasureValue<out T: MeasUnit>(val i: Int){
-}
-
-data class Mile(val m: MeasureValue<MileUnit>)
-data class Meter(val m: MeasureValue<MeterUnit>)
-
-fun main() {
-    val first = Mile(m= MeasureValue(2))
-    val sec = Meter(m= MeasureValue(2))
-    if(first.m == sec.m){//Compilation failed
-        println("do something")
-    }
-}
-```
 -----
 
 ## Type safety
@@ -168,7 +145,7 @@ Note: https://stackoverflow.com/questions/260626/what-is-type-safe
 -----
 
 
-## Mon implémentation
+## Phantom Types, ma solution au temps
 
 ```typescript
 declare const phantom: unique symbol;
@@ -210,7 +187,7 @@ createPeriod(utcDate1, europeParisDate1)//Error
 
 -----
 
-## Cas des guard
+## Cas des autorisations
 
 
 ```typescript
@@ -230,7 +207,7 @@ coPostSomething(john, alice);
 
 ---
 
-## Solution (merci le Duck Typing)
+## Solution (merci le Duck Typing ou pas !)
 
 
 
@@ -345,15 +322,13 @@ type InitDoorClosed = (a: string) => DoorState<Close>;
 type CloseDoor = (a: DoorState<Open>) => DoorState<Close>;
 type OpenDoor = (a: DoorState<Close>) => DoorState<Open>;
 
-
-const initDoorClosed: InitDoorClosed = id => {
+initDoorClosed: InitDoorClosed = id => {
     return { id } as DoorState<Close>;
 };
-export const openReally: OpenDoor = id => {
+const openReally: OpenDoor = id => {
     return { id } as DoorState<Open>;
 };
-
-export const closeReally: CloseDoor = id => {
+const closeReally: CloseDoor = id => {
     return { id } as DoorState<Close>;
 };
 
@@ -367,45 +342,25 @@ const closeADoorAlreadyClose = closeReally(closedDoor); //ERROR: ferme une porte
 
 ---
 
-## Bénéfices
+## Conclusion
 
 - Evite les recherches de types au moment de l'exécution (on le voit direct a la compil)
 - Rend les états explicites
 - Porte une partie des informations au niveau du type plutot que dans des sous-classes
 
 
----
+## Source
 
-## Conclusion
+https://emartynov.medium.com/kotlin-ddd-phantom-type-ae5ab1da0a35
 
+https://betterprogramming.pub/why-are-phantom-types-useful-cfeceb8a9e81
 
+https://ckoster22.medium.com/advanced-types-in-elm-phantom-types-808044c5946d
 
----
+https://rpeszek.github.io/posts/2022-01-09-ts-types-part4.html
 
-## Test (Image)
+https://davesquared.net/2019/01/phantom-types.html
 
-![External Image](https://s3.amazonaws.com/static.slid.es/logo/v2/slides-symbol-512x512.png)
+https://xebia.com/blog/compile-safe-builder-pattern-using-phantom-types-in-scala/
 
----
-
-## Test (Math)
-
-`\[ J(\theta_0,\theta_1) = \sum_{i=0} \]`
-
----
-
-
-<!-- .slide: data-background="#ff0000" -->
-
-## Test
-
-
-<span style="color:blue">some *blue* text</span>
-
----
-
-## Test 2
-
-```js
-console.log('Hello world!');
-```
+https://medium.com/@sellmair/phantom-read-rights-in-kotlin-modelling-a-pipeline-eef3523db857

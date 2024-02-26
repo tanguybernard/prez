@@ -1,4 +1,27 @@
 
+
+## Example Measure
+
+```kotlin
+sealed class MeasUnit
+object MileUnit: MeasUnit()
+object MeterUnit: MeasUnit()
+
+class MeasureValue<out T: MeasUnit>(val i: Int){
+}
+
+data class Mile(val m: MeasureValue<MileUnit>)
+data class Meter(val m: MeasureValue<MeterUnit>)
+
+fun main() {
+    val first = Mile(m= MeasureValue(2))
+    val sec = Meter(m= MeasureValue(2))
+    if(first.m == sec.m){//Compilation failed
+        println("do something")
+    }
+}
+```
+
 ## Example Viewer et Creator
 
 ```typescript
