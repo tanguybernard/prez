@@ -218,7 +218,14 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 
 ## Stockage
 
-- Amazon Elastic Block Store
+- Elastic Block Store (EBS): Disque dur SDD ou HDD.
+- Simple Storage Service (S3): Stockage d'objets (pdf, photos, vidéos...)
+- Elastic File System (EFS): Stockage très elastique et qui se partage entre différentes instances EC2.
+
+---
+
+## S3
+
 
 ---
 
