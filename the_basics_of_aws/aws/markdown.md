@@ -1,4 +1,4 @@
-# Phantom Type
+# Basics of AWS
 
 Tanguy Bernard
 
@@ -187,6 +187,8 @@ Les zones de disponibilité sont physiquement séparées par une distance signif
 
 source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
 
+---
+
 ## Cloud Technology and Services
 
 - Machine Learning
@@ -199,12 +201,26 @@ source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
 - Analyses
 - Sécurité, identité et conformité
 
+---
+
 ## Calcul
 
+- Elastic Compute Cloud (EC2): Le produit phare, le serveur virtuel.
+- Lambda: Service de calcul d'événement sans serveur (serverless).
+- Elastic Container Service (ECS): Gestion de conteneurs.
+- Elastic Kubernetes Service (EKS): Service Kubernetes géré.
+- Fargate: Gestion de conteneurs sans serveur
 
 
+Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs. Avec fargate tu ne gères pas les instances EC2.
 
------
+---
+
+## Stockage
+
+- Amazon Elastic Block Store
+
+---
 
 ## Security and Compliance
 
