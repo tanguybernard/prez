@@ -196,7 +196,6 @@ source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
 - Stockage
 - Outils pour les développeurs
 - Base de données
-- Blockchain
 - Web et mobile front
 - Analyses
 - Sécurité, identité et conformité
@@ -226,8 +225,20 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 
 ## S3
 
+![S3 Classes](./aws/assets/s3_clases.jpg)
 
 ---
+
+## Base de données
+
+- Relational Database Service (RDS): Mysql, PostgreSQL, Amazon Aurora, Oracle, Microsoft SQL Server...
+- Aurora: Entierement managé pour MySQL et PostgreSQL
+- DynamoDB: Clé/valeur
+- Redshift (basé sur PostgreSQL): Grands volumes de données
+- Neptune: Base de données graphe
+- Amazon Managed Blockchain: Créer et gérer des réseaux blockchain.
+- Quantum Ledger Database (Amazon QLDB): Base de données de registre, c'est une chaîne de blocs constituant un journal transactionnel.
+- ElastiCache: Service de stockage de données en mémoire et de mise en cache.
 
 ## Security and Compliance
 
