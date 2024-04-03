@@ -247,7 +247,7 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 
 ### Stockage
 
-<ul style="font-size: xxx-large">
+<ul style="font-size: xx-large">
 <li>Elastic Block Store (EBS): Disque dur SDD ou HDD.</li>
 <li>Simple Storage Service (S3): Stockage d'objets (pdf, photos, vidéos...)</li>
 <li>Elastic File System (EFS): Stockage très elastique et qui se partage entre différentes instances EC2.</li>
@@ -275,6 +275,19 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 <li><b>Amazon Managed Blockchain</b>: Créer et gérer des réseaux blockchain.</li>
 <li><b>Quantum Ledger Database</b> (Amazon QLDB): Base de données de registre, c'est une chaîne de blocs constituant un journal transactionnel.</li>
 <li><b>ElastiCache</b>: Service de stockage de données en mémoire et de mise en cache.</li>
+</ul>
+
+---
+
+
+### Networking & Content Delivery
+<ul style="font-size: xx-large">
+<li><b>Virtual Private Cloud (VPC)</b>: Création d'un réseau virtuel isolé</li>
+<li><b>Route 53</b>: DNS</li>
+<li><b>CloudFront</b>: Content Delivery Network</li>
+<li><b>Api Gateway</b>: Création d'API RESTful et WebSocket</li>
+<li><b>Elastic Load Balancers (ELB)</b>: Distribution du traffic</li>
+<li><b>Internet Gateway (IGW)</b>: Communication avec internet</li>
 </ul>
 
 ---
@@ -315,23 +328,74 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 
 ---
 
+### Focus ressources
+
+- <b>VPC</b>: un réseau virtuel qui constitue une section du cloud isolée
+- <b>Ressource</b>: Instance EC2, Lambda, S3, VPC...
+- <b>Subnet</b>: Des segments d'un VPC
+- <b>NACL</b>: Firewall au niveau du subnet
+- <b>Security group</b>: contrôle le trafic autorisé à atteindre et à quitter les ressources
+
+
+---
+
+### Focus sur la sécurité des ressources
+
+
+<img src="./aws/assets/NACLvsSG-Applied-VPC-1.png" alt="X-ray screenshot" style="width:60vh; height:50vh; ">
+
+
+<div style="font-size:medium; color: #7d889a">
+source: https://myaws.rocks/nacl-vs-security-group/
+</div>
+
+---
+
 ### Monitoring
 
-- CloudWatch: 
-- CloudTrail: 
-- Trusted Advisor: 
-- AWS X-Ray: 
+- CloudWatch: CPU utilization, Nombre de requetes...
+- CloudTrail: Traque l'activité des utilisateurs au sein de l'infra AWS
+- Trusted Advisor: Outil qui inspecte et donne des conseils (cout, perf, secu...)
+- AWS X-Ray: Analyse et debug vos apps
 
 ---
 
 ### x-Ray
 
+
 <img src="./aws/assets/xray-getpost-trace-view.png" alt="X-ray screenshot" style="width:85vh; height:65vh; ">
 
----
+
 
 -----
 
-
-
 ## Billing, Pricing, and Support
+
+---
+
+### Services
+
+- AWS Pricing Calculator: Création d'une estimation
+- AWS Budgets: Creation d'un budget
+- Cost Explorer: Comprendre les couts
+
+
+---
+
+### Support plans
+
+
+<img src="./aws/assets/support-plans.jpeg" alt="X-ray screenshot" style="width:85vh; height:65vh; ">
+
+-----
+
+## Conclusion 
+
+
+- Échangez les dépenses initiales contre des dépenses variables.
+- Bénéficiez d'économies d'échelle massives.
+- Arrêtez de deviner les capacitées.
+- Augmentez la vitesse et l'agilité.
+- Arrêtez de dépenser de l'argent pour faire fonctionner et entretenir des centres de données.
+- Devenez mondial en quelques minutes.
+
