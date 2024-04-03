@@ -313,6 +313,8 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 - AWS Key Management Service: Gestion de clés, chiffrement
 - AWS Secrets Manager: Gestion de secrets (clés API, password), Rotation, Audit
 
+---
+
 ### Monitoring
 
 - CloudWatch: 
@@ -320,11 +322,16 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 - Trusted Advisor: 
 - AWS X-Ray: 
 
------
+---
 
 ### x-Ray
 
-<img src="./aws/assets/xray-getpost-trace-view" alt="X-ray screenshot" style="width:45vh; height:65vh; border:2px solid black;">
+<img src="./aws/assets/xray-getpost-trace-view.png" alt="X-ray screenshot" style="width:85vh; height:65vh; ">
+
+---
+
+-----
+
 
 
 ## Billing, Pricing, and Support
