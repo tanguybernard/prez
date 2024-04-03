@@ -4,6 +4,12 @@ Tanguy Bernard
 
 -----
 
+<div style="color: #dc3f00; font-size: xxx-large">
+Cloud
+</div>
+
+---
+
 ## Cloud Concept
 
 Le cloud est un vaste réseau de serveurs distants éparpillés tout autour de la planète, reliés entre eux, et destinés à fonctionner comme un écosystème unique.
@@ -78,7 +84,7 @@ Exemple: AWS Lambda
 Vous payez pour utiliser une application complète à des fins spécifiques. Elle est gérée, entretenue et sécurisée par le fournisseur cloud. Cependant, vous êtes responsable de la gestion de vos propres données.
 
 <div style="font-size:medium; color: #7d889a">
-Exemple: Amazon Cognito
+Exemple: Amazon Cognito (comparable à Keycloack)
 </div>
 
 ---
@@ -125,7 +131,6 @@ Votre préparation au cloud via différentes perspectives:
 - <b>Mettre à l'échelle</b>: Étendez les pilotes et la valeur opérationnelle à l'échelle souhaitée
 
 
-Exemple:  Tipee ?
 
 ---
 
@@ -218,8 +223,14 @@ source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
 </div>
 
 -----
+<div style="color: #dc3f00; font-size: xxx-large">
+Cloud Technology and Services
+</div>
+
+--- 
 
 ### Cloud Technology and Services
+
 
 - Machine Learning
 - Calcul
@@ -299,22 +310,25 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 - Amazon Cognito (Security, Identity & Compliance)
 - AWS AppSync: GraphQL API
 
----
+-----
 
-## Sécurité et Conformité
+<div style="color: #dc3f00; font-size: xxx-large">
+Sécurité et Conformité
+</div>
+
 
 ---
 
 ### User Permissions and Access
-
-- Compte: Un conteneur qui contient des ressources, des utilisateurs, des paramètres.
-- Compte root user: Celui qui controle les ressources du compte.
-- Utilisateur: Une personne ou une application qui intéragit avec les services AWS.
-- Policies: Permissions  d'un utilisateur ou d'un groupe.
-- Groupe: Une collection d'utilisateurs
-- Roles: Permissions temporaire sur du plus ou moins long terme.
-- Organizations: Service de gestion de comptes (Organisation par pole par ex. Web, Data, Rh...)
-
+<ul style="font-size: xx-large">
+<li><b>Compte</b>: Un conteneur qui contient des ressources, des utilisateurs, des paramètres.</li>
+<li><b>Compte root user</b>: Celui qui controle les ressources du compte.</li>
+<li><b>Utilisateur</b>: Une personne ou une application qui intéragit avec les services AWS.</li>
+<li><b>Policies</b>: Permissions  d'un utilisateur ou d'un groupe.</li>
+<li><b>Groupe</b>: Une collection d'utilisateurs</li>
+<li><b>Roles</b>: Permissions temporaire sur du plus ou moins long terme.</li>
+<li><b>Organizations</b>: Service de gestion de comptes (Organisation par pole par ex. Web, Data, Rh...)</li>
+</ul>
 ---
 
 ### Sécurité
@@ -368,8 +382,9 @@ source: https://myaws.rocks/nacl-vs-security-group/
 
 
 -----
-
-## Billing, Pricing, and Support
+<div style="color: #dc3f00; font-size: xxx-large">
+Billing, Pricing, and Support
+</div>
 
 ---
 
