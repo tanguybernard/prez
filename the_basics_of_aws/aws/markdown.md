@@ -288,10 +288,43 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 
 ---
 
-## Security and Compliance
+## Sécurité et Conformité
 
+---
 
+### User Permissions and Access
+
+- Compte: Un conteneur qui contient des ressources, des utilisateurs, des paramètres.
+- Compte root user: Celui qui controle les ressources du compte.
+- Utilisateur: Une personne ou une application qui intéragit avec les services AWS.
+- Policies: Permissions  d'un utilisateur ou d'un groupe.
+- Groupe: Une collection d'utilisateurs
+- Roles: Permissions temporaire sur du plus ou moins long terme.
+- Organizations: Service de gestion de comptes (Organisation par pole par ex. Web, Data, Rh...)
+
+---
+
+### Sécurité
+
+- Amazon WAF: Web application firewall
+- AWS Shield: Contre les attaques DDoS
+- GuardDuty: Detection de menaces (intrusion, changement de conf, anomalies...)
+- Amazon Inspector: Vulnérabilitées dans les applications
+- AWS Key Management Service: Gestion de clés, chiffrement
+- AWS Secrets Manager: Gestion de secrets (clés API, password), Rotation, Audit
+
+### Monitoring
+
+- CloudWatch: 
+- CloudTrail: 
+- Trusted Advisor: 
+- AWS X-Ray: 
 
 -----
+
+### x-Ray
+
+<img src="./aws/assets/xray-getpost-trace-view" alt="X-ray screenshot" style="width:45vh; height:65vh; border:2px solid black;">
+
 
 ## Billing, Pricing, and Support
