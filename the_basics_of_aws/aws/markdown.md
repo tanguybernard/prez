@@ -10,10 +10,10 @@ Le cloud est un vaste réseau de serveurs distants éparpillés tout autour de l
 
 ---
 
-## Modèles de cloud computing
+### Modèles de cloud computing
 
 
-![Iaas, Paas, Saas](./aws/assets/iaas-paas-saas.jpg)
+![Iaas, Paas, Saas](./aws/assets/iaas_paas_saas.jpg)
 
 
 <div style="font-size:small">
@@ -22,57 +22,68 @@ source: https://cloud.google.com/learn/paas-vs-iaas-vs-saas?hl=fr
 
 ---
 
-## Infrastructure as a Service
+### Infrastructure as a Service
 
 Vous louez le matériel sur lequel exécuter votre application, mais vous êtes responsable de la gestion de l'OS, de l'environnement d'exécution et du scaling, ainsi que de toutes les données.
 
+<div style="font-size:medium; color: #7d889a">
 Exemple: Amazon Elastic Compute Cloud (EC2)
-
+</div>
 ---
 
-## Containers as a Service (CAAS)
+### Containers as a Service (CAAS)
 
 Considérer comme une sous catégorie du Iaas. 
 
 A la différence que la ressource fondamentale sont les containers plutôt que les machines virtuelles ou les systèmes d'hébergement matériels.
 
+<div style="font-size:medium; color: #7d889a">
 Exemple: Amazon Elastic Container Service (ECS)
+</div>
 
-## Platform as a Service (PAAS)
+---
+
+###  Platform as a Service (PAAS)
 
 Le fournisseur s'occupent de l'OS et de l'environnement d'execution (Java, Node, Python, Go...)
 
 Vous pouvez vous concentrer sur le déploiement et la gestion de vos applications.
 
+<div style="font-size:medium; color: #7d889a">
 Exemple: AWS Elastic Beanstalk
+</div>
 
-## Beanstalk
+---
+### Beanstalk
 
-![aws-beanstalk-platform.png](./aws/assets/Faws-beanstalk-plateform.png)
+![aws-beanstalk-platform.png](./aws/assets/aws-beanstalk-platform.png)
 
-Exemple: AWS Elastic Beanstalk
 
 ---
 
-## Function as a Service (Faas)
+### Function as a Service (Faas)
 
 Vous permet d’exécuter du code en réponse à des événements !
 
 Priorité au code et non à l’infrastructure : Avec le FaaS, vous pouvez diviser le serveur en fonctions qui peuvent être mises à l’échelle automatiquement !
 
+<div style="font-size:medium; color: #7d889a">
 Exemple: AWS Lambda
+</div>
 
 ---
 
-## Software as a Service (Saas)
+### Software as a Service (Saas)
 
 Vous payez pour utiliser une application complète à des fins spécifiques. Elle est gérée, entretenue et sécurisée par le fournisseur cloud. Cependant, vous êtes responsable de la gestion de vos propres données.
 
-Ex: Amazon Cognito
+<div style="font-size:medium; color: #7d889a">
+Exemple: Amazon Cognito
+</div>
 
 ---
 
-## Cloud Based, On-Premise And Hybrid
+### Cloud Based, On-Premise And Hybrid
 
 - Cloud: 
     - Public: Hebergé par un fournisseur, les ressources peuvent être redistribuées à d'autres clients.
@@ -82,19 +93,19 @@ Ex: Amazon Cognito
 
 ---
 
-## Benefits of AWS cloud
+### Benefits of AWS cloud
 
 Remplace les dépenses d'investissement initiales (CAPEX) par de faibles dépenses d'exploitation variables (OPEX).
 
+<div style="color: #c141cb">
 Vous ne payez que ce que vous utilisez !
+</div>
 
 ---
 
-## Framework d'adoption du Cloud AWS (AWS CAF)
+### Framework d'adoption du Cloud AWS (AWS CAF)
 
-AWS CAF fournit des conseils sur les bonnes pratiques qui améliore votre préparation au cloud.
-
-Les perspective :
+Votre préparation au cloud via différentes perspectives:
 
 - Entreprise
 - Personnes
@@ -106,61 +117,73 @@ Les perspective :
 ---
 
 
-## Pour se lancer
+### Pour se lancer
 
-- Envisager: Identifiez et hiérarchisez les occasions de transformation
-- Aligner: Identifiez les déficits de fonctionnalités et les dépendances inter-organisationnelles.
-- Lancer: Menez des projets pilotes en production et démontrez la valeur opérationnelle progressive.
-- Mettre à l'échelle: Étendez les pilotes et la valeur opérationnelle à l'échelle souhaitée
+- <b>Envisager</b>: Identifiez et hiérarchisez les occasions de transformation
+- <b>Aligner</b>: Identifiez les déficits de fonctionnalités et les dépendances inter-organisationnelles.
+- <b>Lancer</b>: Menez des projets pilotes en production et démontrez la valeur opérationnelle progressive.
+- <b>Mettre à l'échelle</b>: Étendez les pilotes et la valeur opérationnelle à l'échelle souhaitée
 
 
-Exemple:  Tipee, Trackelec ?
+Exemple:  Tipee ?
 
 ---
 
-## AWS Well-Architected
+### AWS Well-Architected
 
 Le cadre AWS Well-Architected Framework décrit les concepts clés, les principes de conception et les bonnes pratiques architecturales pour concevoir et exécuter des charges de travail dans le cloud.
 
 ---
 
-## Les six piliers
+### Les six piliers
 
-## Pilier Excellence opérationnelle
+---
+
+### Pilier Excellence opérationnelle
 
 - Organisation
 - Préparation
 - Opération
 - ...
 
-## Pilier Sécurité
+---
+
+### Pilier Sécurité
 
 - Partage des responsabilités
 - IAM
 - Protection des infrastructures
 - ...
 
-## Pilier Fiabilité
+---
+
+### Pilier Fiabilité
 
 - Conception de systèmes distribués
 - Backup de données
 - Plan de reprise après sinistre
 - ...
 
-## Pilier Efficacité des performances
+---
+
+### Pilier Efficacité des performances
 
 - Devenir mondial en quelques minutes
 - Utilisation des architectures sans serveur
 - ...
 
-## Pilier Optimisation des coûts
+---
+
+### Pilier Optimisation des coûts
 
 - Mesurer l'efficacité globale
 - Adopter un modèle de consommation
 - Mesurer le retour sur investissement (ROI)
 - ...
 
-## Pilier Développement durable
+---
+
+### Pilier Développement durable
 
 - Mesure de l'impact de la charge de travail
 - Maximisation de l'utilisation des ressources
@@ -169,27 +192,34 @@ Le cadre AWS Well-Architected Framework décrit les concepts clés, les principe
 
 ---
 
+### AWS Global Infrastructure
 
-## AWS Global Infrastructure
 
-![Regions at AZ](./aws/assets/Region_AZ.png)
 
+<img src="./aws/assets/Region_AZ.png" alt="Texte alternatif" style="width:50vh; height:40vh; border:2px solid black;">
+
+<div style="font-size:medium; color: #7d889a">
 source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
+</div>
+
 
 ---
 
-## Les zones de disponibilité (AZ)
-
+### Les zones de disponibilité (AZ)
+<div style="font-size:medium;">
 Les zones de disponibilité sont physiquement séparées par une distance significative, c'est-à-dire plusieurs kilomètres, de toute autre zone de disponibilité.
+</div>
 
-![regions-and-zones.png](./aws/assets/regions-and-zones.png)
+<img src="./aws/assets/regions-and-zones.png" alt="Texte alternatif" style="width:50vh; height:40vh; border:2px solid black;">
 
 
+<div style="font-size:medium; color: #7d889a">
 source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
+</div>
 
----
+-----
 
-## Cloud Technology and Services
+### Cloud Technology and Services
 
 - Machine Learning
 - Calcul
@@ -200,9 +230,10 @@ source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
 - Analyses
 - Sécurité, identité et conformité
 
+
 ---
 
-## Calcul
+### Calcul
 
 - Elastic Compute Cloud (EC2): Le produit phare, le serveur virtuel.
 - Lambda: Service de calcul d'événement sans serveur (serverless).
@@ -210,37 +241,56 @@ source: https://aws.amazon.com/fr/about-aws/global-infrastructure/regions_az/
 - Elastic Kubernetes Service (EKS): Service Kubernetes géré.
 - Fargate: Gestion de conteneurs sans serveur
 
-
 Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs. Avec fargate tu ne gères pas les instances EC2.
 
 ---
 
-## Stockage
+### Stockage
 
-- Elastic Block Store (EBS): Disque dur SDD ou HDD.
-- Simple Storage Service (S3): Stockage d'objets (pdf, photos, vidéos...)
-- Elastic File System (EFS): Stockage très elastique et qui se partage entre différentes instances EC2.
-
----
-
-## S3
-
-![S3 Classes](./aws/assets/s3_clases.jpg)
+<ul style="font-size: xxx-large">
+<li>Elastic Block Store (EBS): Disque dur SDD ou HDD.</li>
+<li>Simple Storage Service (S3): Stockage d'objets (pdf, photos, vidéos...)</li>
+<li>Elastic File System (EFS): Stockage très elastique et qui se partage entre différentes instances EC2.</li>
+</ul>
 
 ---
 
-## Base de données
+### S3
 
-- Relational Database Service (RDS): Mysql, PostgreSQL, Amazon Aurora, Oracle, Microsoft SQL Server...
-- Aurora: Entierement managé pour MySQL et PostgreSQL
-- DynamoDB: Clé/valeur
-- Redshift (basé sur PostgreSQL): Grands volumes de données
-- Neptune: Base de données graphe
-- Amazon Managed Blockchain: Créer et gérer des réseaux blockchain.
-- Quantum Ledger Database (Amazon QLDB): Base de données de registre, c'est une chaîne de blocs constituant un journal transactionnel.
-- ElastiCache: Service de stockage de données en mémoire et de mise en cache.
+
+<img src="./aws/assets/s3_classes.jpg" alt="Texte alternatif" style="width:45vh; height:65vh; border:2px solid black;">
+
+
+
+---
+
+### Base de données
+
+<ul style="font-size: xx-large">
+<li><b>Relational Database Service</b> (RDS): Mysql, PostgreSQL, Amazon Aurora, Oracle, Microsoft SQL Server...</li>
+<li><b>Aurora</b>: Entierement managé pour MySQL et PostgreSQL</li>
+<li><b>DynamoDB</b>: Clé/valeur</li>
+<li><b>Redshift</b> (basé sur PostgreSQL): Grands volumes de données</li>
+<li><b>Neptune</b>: Base de données graphe</li>
+<li><b>Amazon Managed Blockchain</b>: Créer et gérer des réseaux blockchain.</li>
+<li><b>Quantum Ledger Database</b> (Amazon QLDB): Base de données de registre, c'est une chaîne de blocs constituant un journal transactionnel.</li>
+<li><b>ElastiCache</b>: Service de stockage de données en mémoire et de mise en cache.</li>
+</ul>
+
+---
+
+### Autres
+
+- Amazon Textract (Machine Learning)
+- AWS Glue (Analytics): ETL
+- Amazon Cognito (Security, Identity & Compliance)
+- AWS AppSync: GraphQL API
+
+---
 
 ## Security and Compliance
+
+
 
 -----
 
