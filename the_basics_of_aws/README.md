@@ -18,7 +18,7 @@ https://www.cloudflare.com/fr-fr/learning/cloud/what-is-a-private-cloud/
 
 ## Installation chez le client et sur Windows
 
-Add to package.json :
+Add this line to package.json :
 
     "install-win": "SET PUPPETEER_SKIP_DOWNLOAD='true'& npm i"
 
