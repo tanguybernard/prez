@@ -303,6 +303,37 @@ Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs.
 
 ---
 
+### Developer Tools
+
+- CodeCommit: Solution de contrôle de source
+- CodeBuild: Solution de build
+- CodePipeline: Continuous delivery service
+- CodeDeploy: Service de déploiement automatisé
+
+---
+
+### CodeCommit
+
+<img src="./aws/assets/codecommit-cv-complex1.png" alt="Texte alternatif" style="width:90vh; height:65vh; border:1px solid black;">
+
+
+<div style="font-size:medium; color: #7d889a">
+source: https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-view-commit-details.html
+</div>
+
+---
+
+### CodePipeline
+
+<img src="./aws/assets/codepipeline.png" alt="Texte alternatif" style="width:50vh; height:70vh; border:1px solid black;">
+
+
+<div style="font-size:medium; color: #7d889a">
+source: https://fastchicken.co.nz/2019/07/01/cross-account-codepipeline-deployments/
+</div>
+
+---
+
 ### Autres
 
 - Amazon Textract (Machine Learning)
