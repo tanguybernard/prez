@@ -138,8 +138,6 @@ public class NioExample {
 }
 ```
 
-
-
 -----
 
 <div style="color: #dc3f00; font-size: xxx-large">
@@ -148,49 +146,62 @@ Serialization
 
 --- 
 
-### Cloud Technology and Services
+### Definition
 
-
-- Machine Learning
-- Calcul
-- Stockage
-- Outils pour les développeurs
-- Base de données
-- Web et mobile front
-- Analyses
-- Sécurité, identité et conformité
-
+Serialization is the conversion of the state of an object into a byte stream; deserialization does the opposite.
 
 ---
 
-### Calcul
+### Class
 
-- Elastic Compute Cloud (EC2): Le produit phare, le serveur virtuel.
-- Lambda: Service de calcul d'événement sans serveur (serverless).
-- Elastic Container Service (ECS): Gestion de conteneurs.
-- Elastic Kubernetes Service (EKS): Service Kubernetes géré.
-- Fargate: Gestion de conteneurs sans serveur
+```java
+public class Person implements Serializable {
+    private static final long serialVersionUID = 1L;
+    static String country = "ITALY";
+    private int age;
+    private String name;
+    transient int height;
 
-Note: ECS tu gère provision les instances ec2 sur lequel tourne les conteneurs. Avec fargate tu ne gères pas les instances EC2.
-
----
-
-### Stockage
-
-<ul style="font-size: xx-large">
-<li>Elastic Block Store (EBS): Disque dur SDD ou HDD.</li>
-<li>Simple Storage Service (S3): Stockage d'objets (pdf, photos, vidéos...)</li>
-<li>Elastic File System (EFS): Stockage très elastique et qui se partage entre différentes instances EC2.</li>
-</ul>
+    // getters and setters
+}
+```
 
 ---
 
-### S3
+### Serialize
 
+```java
+Person person = new Person();
+person.setAge(20);
+person.setName("Joe");
 
-<img src="./aws/assets/s3_classes.jpg" alt="Texte alternatif" style="width:45vh; height:65vh; border:2px solid black;">
+FileOutputStream fileOutputStream
+  = new FileOutputStream("yourfile.txt");
+ObjectOutputStream objectOutputStream 
+  = new ObjectOutputStream(fileOutputStream);
+objectOutputStream.writeObject(person);
+objectOutputStream.flush();
+objectOutputStream.close();
+```
 
+---
 
+### Deserialize
+
+```java    
+FileInputStream fileInputStream
+  = new FileInputStream("yourfile.txt");
+ObjectInputStream objectInputStream
+  = new ObjectInputStream(fileInputStream);
+Person p2 = (Person) objectInputStream.readObject();
+objectInputStream.close(); 
+```
+
+-----
+
+<div style="color: #dc3f00; font-size: xxx-large">
+Generics
+</div>
 
 ---
 
