@@ -152,7 +152,7 @@ Serialization is the conversion of the state of an object into a byte stream; de
 
 ---
 
-### Class
+### Serializable
 
 ```java
 public class Person implements Serializable {
@@ -197,10 +197,45 @@ Person p2 = (Person) objectInputStream.readObject();
 objectInputStream.close(); 
 ```
 
+---
+
+### With Library like Jackson or Gson
+
+Convert objects to JSON and vice versa
+
+### Deserialize
+
+```java    
+public class JacksonSerializationExample {
+    public static void main(String[] args) {
+        // Création d'un objet Student
+        Student student = new Student("Bob", 25, "S98765");
+
+        // ObjectMapper de Jackson
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            // Sérialisation : Objet vers JSON
+            String jsonString = objectMapper.writeValueAsString(student);
+            System.out.println("JSON Serialized: " + jsonString);
+
+            // Désérialisation : JSON vers Objet
+            Student deserializedStudent = objectMapper.readValue(jsonString, Student.class);
+            System.out.println("Deserialized Object: " + deserializedStudent);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+---
+
 -----
 
 <div style="color: #dc3f00; font-size: xxx-large">
-Generics
+Collection
 </div>
 
 ---
