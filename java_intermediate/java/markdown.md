@@ -238,6 +238,153 @@ Collection
 
 ---
 
+### Commonly used collections
+
+<table style="font-size: 12px; width: 80%; margin: auto; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f4f4f4;">
+      <th style="border: 1px solid #ddd; padding: 6px; text-align: center; font-weight: bold;">Class</th>
+      <th style="border: 1px solid #ddd; padding: 6px; text-align: center; font-weight: bold;">Ordered</th>
+      <th style="border: 1px solid #ddd; padding: 6px; text-align: center; font-weight: bold;">Allows Duplicates</th>
+      <th style="border: 1px solid #ddd; padding: 6px; text-align: center; font-weight: bold;">Null Elements</th>
+      <th style="border: 1px solid #ddd; padding: 6px; text-align: center; font-weight: bold;">Thread-Safe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">ArrayList</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">LinkedList</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">HashSet</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">TreeSet</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">HashMap</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Keys: No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">TreeMap</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Keys: No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">ArrayDeque</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">ConcurrentHashMap</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Keys: No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">No</td>
+      <td style="border: 1px solid #ddd; padding: 6px; text-align: center;">Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+
+### ArrayList
+
+```java
+ArrayList fruits = new ArrayList<>();
+fruits.add("Pomme");
+fruits.add("Banane");
+fruits.add("Orange");
+System.out.println(fruits);  // [Pomme, Banane, Orange]
+System.out.println(fruits.get(1));  // Banane
+fruits.remove("Banane");
+System.out.println(fruits);  // [Pomme, Orange]
+```
+
+---
+
+### LinkedList
+
+```java
+LinkedList numbers = new LinkedList<>();
+numbers.add(10);
+numbers.add(20);
+numbers.addFirst(5);
+numbers.addLast(30);
+System.out.println(numbers);  // [5, 10, 20, 30]
+System.out.println(numbers.getFirst());  // 5
+numbers.removeLast();
+System.out.println(numbers);  // [5, 10, 20]
+```
+
+---
+
+### HashSet
+
+```java
+HashSet colors = new HashSet<>();
+colors.add("Rouge");
+colors.add("Vert");
+colors.add("Bleu");
+colors.add("Rouge");  // Pas de doublon
+System.out.println(colors);  // [Rouge, Vert, Bleu]
+System.out.println(colors.contains("Vert"));  // true
+colors.remove("Bleu");
+System.out.println(colors);  // [Rouge, Vert]
+```
+---
+
+### HashMap
+
+```java
+HashMap ages = new HashMap<>();
+ages.put("Alice", 25);
+ages.put("Bob", 30);
+ages.put("Charlie", 35);
+System.out.println(ages);  // {Bob=30, Alice=25, Charlie=35}
+System.out.println(ages.get("Bob"));  // 30
+ages.remove("Alice");
+System.out.println(ages);  // {Bob=30, Charlie=35}
+```
+---
+
+### ArrayDeque
+
+```java
+ArrayDeque stack = new ArrayDeque<>();
+stack.push("Premier");
+stack.push("Deuxième");
+stack.push("Troisième");
+System.out.println(stack);  // [Troisième, Deuxième, Premier]
+System.out.println(stack.pop());  // Troisième
+System.out.println(stack);  // [Deuxième, Premier]
+```
+
 -----
 
 <div style="color: #dc3f00; font-size: xxx-large">
@@ -422,16 +569,35 @@ Regex
 
 ---
 
+### Introduction
+
+Regular expressions (regex) in Java are powerful tools for pattern matching and text manipulation.
+
+---
+
+### Example
 
 
+```java
+public static void main(String[] args) {
+    String text = "Voici quelques emails : test.email@example.com, autre.email@domain.org, et faux-email@domain,com.";
 
-## Conclusion 
+    // Définir le pattern pour une adresse e-mail valide
+    String emailRegex = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}";
+
+    Pattern pattern = Pattern.compile(emailRegex);
+    Matcher matcher = pattern.matcher(text);
+
+    System.out.println("Adresses e-mail trouvées :");
+    while (matcher.find()) {
+        System.out.println(matcher.group());
+    }
+}
+```
 
 
-- Échangez les dépenses initiales contre des dépenses variables.
-- Bénéficiez d'économies d'échelle massives.
-- Arrêtez de deviner les capacitées.
-- Augmentez la vitesse et l'agilité.
-- Arrêtez de dépenser de l'argent pour faire fonctionner et entretenir des centres de données.
-- Devenez mondial en quelques minutes.
+-----
 
+<div style="color: #dc3f00; font-size: xxx-large">
+Thank you
+</div>
