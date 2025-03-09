@@ -230,8 +230,6 @@ public class JacksonSerializationExample {
 }
 ```
 
----
-
 -----
 
 <div style="color: #dc3f00; font-size: xxx-large">
@@ -240,134 +238,192 @@ Collection
 
 ---
 
-### Base de données
+-----
 
-<ul style="font-size: xx-large">
-<li><b>Relational Database Service</b> (RDS): Mysql, PostgreSQL, Amazon Aurora, Oracle, Microsoft SQL Server...</li>
-<li><b>Aurora</b>: Entierement managé pour MySQL et PostgreSQL</li>
-<li><b>DynamoDB</b>: Clé/valeur</li>
-<li><b>Redshift</b> (basé sur PostgreSQL): Grands volumes de données</li>
-<li><b>Neptune</b>: Base de données graphe</li>
-<li><b>Amazon Managed Blockchain</b>: Créer et gérer des réseaux blockchain.</li>
-<li><b>Quantum Ledger Database</b> (Amazon QLDB): Base de données de registre, c'est une chaîne de blocs constituant un journal transactionnel.</li>
-<li><b>ElastiCache</b>: Service de stockage de données en mémoire et de mise en cache.</li>
-</ul>
+<div style="color: #dc3f00; font-size: xxx-large">
+Generics
+</div>
 
 ---
 
+### Introduction
 
-### Networking & Content Delivery
-<ul style="font-size: xx-large">
-<li><b>Virtual Private Cloud (VPC)</b>: Création d'un réseau virtuel isolé</li>
-<li><b>Route 53</b>: DNS</li>
-<li><b>CloudFront</b>: Content Delivery Network</li>
-<li><b>Api Gateway</b>: Création d'API RESTful et WebSocket</li>
-<li><b>Elastic Load Balancers (ELB)</b>: Distribution du traffic</li>
-<li><b>Internet Gateway (IGW)</b>: Communication avec internet</li>
-</ul>
+
+Generics in Java allow developers to write flexible, type-safe code by parameterizing classes, methods, and interfaces with types. This feature enhances compile-time type checking, eliminates the need for explicit casting, and reduces runtime errors.
 
 ---
 
-### Autres
+## Generic Classes
 
-- Amazon Textract (Machine Learning)
-- AWS Glue (Analytics): ETL
-- Amazon Cognito (Security, Identity & Compliance)
-- AWS AppSync: GraphQL API
+```java
+// Generic Pair class to hold two related objects
+class Pair<K, V> {
+    private K key;
+    private V value;
+
+    public Pair(K key, V value) {
+        this.key = key;
+        this.value = value;
+    }
+
+    public K getKey() {
+        return key;
+    }
+
+    public V getValue() {
+        return value;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + key + ", " + value + ")";
+    }
+}
+```
+
+---
+
+```java
+public class GenericClassExample {
+    public static void main(String[] args) {
+        // Create a Pair of Integer and String
+        Pair<Integer, String> pair1 = new Pair<>(1, "One");
+        System.out.println(pair1);
+
+        // Create a Pair of String and Double
+        Pair<String, Double> pair2 = new Pair<>("Pi", 3.14);
+        System.out.println(pair2);
+    }
+}
+```
+
+---
+
+### Generic Methods
+
+```java
+public class GenericMethods {
+    public static  void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        Double[] doubleArray = {1.1, 2.2, 3.3, 4.4, 5.5};
+        String[] stringArray = {"Hello", "Generics", "in", "Java"};
+
+        System.out.print("Integer Array: ");
+        printArray(intArray);
+
+        System.out.print("Double Array: ");
+        printArray(doubleArray);
+
+        System.out.print("String Array: ");
+        printArray(stringArray);
+    }
+}
+```
+
+---
+
+### Bounded Type Parameters
+
+```java
+public class NumberOperations<T extends Number> {
+    private T[] numbers;
+
+    public NumberOperations(T[] numbers) {
+        this.numbers = numbers;
+    }
+
+    public double getAverage() {
+        double sum = 0.0;
+        for (T number : numbers) {
+            sum += number.doubleValue();
+        }
+        return sum / numbers.length;
+    }
+
+    public static void main(String[] args) {
+        Integer[] integers = {1, 2, 3, 4, 5};
+        NumberOperations<Integer> intOps = new NumberOperations<>(integers);
+        System.out.println("Average of integers: " + intOps.getAverage());
+
+        Double[] doubles = {1.1, 2.2, 3.3, 4.4, 5.5};
+        NumberOperations<Double> doubleOps = new NumberOperations<>(doubles);
+        System.out.println("Average of doubles: " + doubleOps.getAverage());
+    }
+}
+```
+
+---
+
+### Wildcard Example with Upper Bound _(<? extends T>)_
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+class Animal {
+    void sound() {
+        System.out.println("Some generic animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Bark!");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Meow!");
+    }
+}
+
+public class WildcardUpperBoundExample {
+    public static void printAnimalSounds(List<? extends Animal> animals) {
+        for (Animal animal : animals) {
+            animal.sound(); // Safe to call because all elements are at least of type Animal
+        }
+    }
+
+    public static void main(String[] args) {
+        List<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+
+        List<Cat> cats = new ArrayList<>();
+        cats.add(new Cat());
+        cats.add(new Cat());
+
+        System.out.println("Dog sounds:");
+        printAnimalSounds(dogs);
+
+        System.out.println("Cat sounds:");
+        printAnimalSounds(cats);
+    }
+}
+
+```
+
 
 -----
 
 <div style="color: #dc3f00; font-size: xxx-large">
-Sécurité et Conformité
-</div>
-
-
----
-
-### User Permissions and Access
-<ul style="font-size: xx-large">
-<li><b>Compte</b>: Un conteneur qui contient des ressources, des utilisateurs, des paramètres.</li>
-<li><b>Compte root user</b>: Celui qui controle les ressources du compte.</li>
-<li><b>Utilisateur</b>: Une personne ou une application qui intéragit avec les services AWS.</li>
-<li><b>Policies</b>: Permissions  d'un utilisateur ou d'un groupe.</li>
-<li><b>Groupe</b>: Une collection d'utilisateurs</li>
-<li><b>Roles</b>: Permissions temporaire sur du plus ou moins long terme.</li>
-<li><b>Organizations</b>: Service de gestion de comptes (Organisation par pole par ex. Web, Data, Rh...)</li>
-</ul>
----
-
-### Sécurité
-
-- Amazon WAF: Web application firewall
-- AWS Shield: Contre les attaques DDoS
-- GuardDuty: Detection de menaces (intrusion, changement de conf, anomalies...)
-- Amazon Inspector: Vulnérabilitées dans les applications
-- AWS Key Management Service: Gestion de clés, chiffrement
-- AWS Secrets Manager: Gestion de secrets (clés API, password), Rotation, Audit
-
----
-
-### Focus ressources
-
-- <b>VPC</b>: un réseau virtuel qui constitue une section du cloud isolée
-- <b>Ressource</b>: Instance EC2, Lambda, S3, VPC...
-- <b>Subnet</b>: Des segments d'un VPC
-- <b>NACL</b>: Firewall au niveau du subnet
-- <b>Security group</b>: contrôle le trafic autorisé à atteindre et à quitter les ressources
-
-
----
-
-### Focus sur la sécurité des ressources
-
-
-<img src="./aws/assets/NACLvsSG-Applied-VPC-1.png" alt="X-ray screenshot" style="width:60vh; height:50vh; ">
-
-
-<div style="font-size:medium; color: #7d889a">
-source: https://myaws.rocks/nacl-vs-security-group/
+Regex
 </div>
 
 ---
 
-### Monitoring
-
-- CloudWatch: CPU utilization, Nombre de requetes...
-- CloudTrail: Traque l'activité des utilisateurs au sein de l'infra AWS
-- Trusted Advisor: Outil qui inspecte et donne des conseils (cout, perf, secu...)
-- AWS X-Ray: Analyse et debug vos apps
-
----
-
-### x-Ray
 
 
-<img src="./aws/assets/xray-getpost-trace-view.png" alt="X-ray screenshot" style="width:85vh; height:65vh; ">
-
-
-
------
-<div style="color: #dc3f00; font-size: xxx-large">
-Billing, Pricing, and Support
-</div>
-
----
-
-### Services
-
-- AWS Pricing Calculator: Création d'une estimation
-- AWS Budgets: Creation d'un budget
-- Cost Explorer: Comprendre les couts
-
-
----
-
-### Support plans
-
-
-<img src="./aws/assets/support-plans.jpeg" alt="X-ray screenshot" style="width:85vh; height:65vh; ">
-
------
 
 ## Conclusion 
 

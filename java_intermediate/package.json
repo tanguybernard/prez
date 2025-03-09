@@ -37,6 +37,7 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/rollup-darwin-arm64": "4.35.0",
     "babel-plugin-transform-html-import-to-string": "2.0.0",
     "colors": "^1.4.0",
     "core-js": "^3.33.1",
