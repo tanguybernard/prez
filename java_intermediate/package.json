@@ -10,7 +10,8 @@
   "scripts": {
     "test": "gulp test",
     "start": "gulp serve",
-    "build": "gulp build"
+    "build": "gulp build",
+    "serve:pres2": "reveal-md java/presentation2.md --watch --port 8001"
   },
   "author": {
     "name": "Hakim El Hattab",
@@ -54,6 +55,7 @@
     "marked": "^4.3.0",
     "node-qunit-puppeteer": "^2.1.2",
     "qunit": "^2.20.0",
+    "reveal-md": "^6.1.4",
     "rollup": "^4.1.5",
     "sass": "^1.69.5",
     "yargs": "^17.7.2"
