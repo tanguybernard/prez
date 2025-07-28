@@ -75,11 +75,14 @@ classDiagram
         <<interface>>
     }
     class Site {
-        +id
-        +adresse
-        +segment
+        +id: uuid
+        +pdl: int
+        +adresse: str
+        +segment: str
     }
-    class Lot
+    class Lot {
+        +sites: Site[]
+    }
 
     Site ..|> Consommateur : implements
     Lot --|> Site : extends
