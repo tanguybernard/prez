@@ -22,5 +22,28 @@ class Site {
     +String segment
     +float consommation()
 }
-```mermaid
+```
 
+
+Héritage
+
+```mermaid
+classDiagram
+    class Consommateur {
+        +UUID id
+        +float consommation()
+    }
+
+    class Site {
+        +String numeroPDL
+        +String segment
+    }
+
+    class Lot {
+        +String nom
+        +List<UUID> siteIds
+    }
+
+    Consommateur <|-- Site
+    Consommateur <|-- Lot
+```
