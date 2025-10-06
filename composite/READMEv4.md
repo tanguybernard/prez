@@ -12,3 +12,15 @@ class Site {
 }
 ```
 
+Plusieurs sites
+
+```mermaid
+classDiagram
+class Site {
+    +UUID id
+    +List~String~ numerosPDL
+    +String segment
+    +float consommation()
+}
+```mermaid
+
