@@ -47,3 +47,32 @@ classDiagram
     Consommateur <|-- Site
     Consommateur <|-- Lot
 ```
+
+
+Composite
+
+
+```mermaid
+classDiagram
+    class Consommateur {
+        <<interface>>
+        +UUID id
+        +float consommation()
+    }
+
+    class Site {
+        +String numeroPDL
+        +String segment
+        +float consommation()
+    }
+
+    class Lot {
+        +String nom
+        +List<Site> sites
+        +float consommation()
+    }
+
+    Consommateur <|.. Site
+    Consommateur <|.. Lot
+    Lot o-- Site : contient >
+```
