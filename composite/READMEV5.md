@@ -41,3 +41,29 @@ Consommateur <|-- Batiment
 Consommateur <|-- GroupeDeBatiments
 ```
 
+```mermaid
+classDiagram
+class Consommateur {
+    <<interface>>
+    +float consommation()
+}
+
+class Batiment {
+    +string nom
+    +string numeroCompteur
+    +string type
+    +float consommation()
+}
+
+class GroupeDeBatiments {
+    +string nom
+    +List~Consommateur~ consommateurs
+    +float consommation()
+    +ajouter(c: Consommateur): void
+}
+
+Consommateur <|.. Batiment
+Consommateur <|.. GroupeDeBatiments
+GroupeDeBatiments "1" o-- "n" Consommateur : contient >
+```
+
